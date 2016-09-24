@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:minHeight="160dp"
+    android:minWidth="250dp"
+    android:layout_margin="10dp"
+    >
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_height="160dp"
+        android:minHeight="200dp"
+        android:minWidth="250dp"
+        android:layout_margin="5dp"
+        card_view:cardCornerRadius="2dp"
+        card_view:contentPadding="10dp">
+
+        <LinearLayout
+            android:minHeight="200dp"
+            android:minWidth="250dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <RelativeLayout
+
+    android:id="@+id/gallery"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+    <ImageView
+        android:paddingLeft="12dp"
+        android:id="@+id/galleryimage"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/gallery"
+        />
+    <TextView
+        android:layout_centerVertical="true"
+        android:paddingLeft="20dp"
+        android:textSize="12dp"
+        android:layout_toRightOf="@+id/galleryimage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gallery"
+        android:textColor="@color/text_color_in_profile"/>
+
+</RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:background="@android:color/black"
+        android:layout_height="1dp" />
+    <RelativeLayout
+        android:layout_marginTop="20dp"
+        android:id="@+id/camera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <ImageView
+            android:paddingLeft="12dp"
+            android:id="@+id/cameraimage"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/camera"/>
+        <TextView
+            android:layout_centerVertical="true"
+            android:paddingLeft="20dp"
+            android:textSize="12dp"
+            android:layout_toRightOf="@+id/cameraimage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Camera"
+            android:textColor="@color/text_color_in_profile"/>
+    </RelativeLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

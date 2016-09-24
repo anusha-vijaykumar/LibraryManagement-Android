@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.anusha.library">
+
+
+    <uses-permission android:name="com.rajesh.map.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.gogle.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+
+        <activity
+            android:name=".SplashScreen"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity android:name=".LoginActivity"
+            android:label="Account">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+               <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyCVHdD_q2L6yeGUs-yuLuLcUXbtT7yjE7I" />
+        <!--  Entry for RegisterActivity.class -->
+        <activity android:name=".RegisterActivity"
+            android:label="Register New Account"></activity>
+        <service android:name=".GPSTracker"
+            android:label="Get location"></service>
+        <service android:name=".gcm.RegistrationIntentService"
+            android:exported="false"></service>
+         <service android:name=".gcm.GCMMessageHandler"
+             android:exported="false">
+             <intent-filter>
+                 <action android:name="com.google.android.c2dm.intent.RECEIVE"></action>
+             </intent-filter>
+         </service>
+
+        <receiver android:name="com.google.android.gms.gcm.GcmReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.example.anusha.library"/>
+            </intent-filter>
+        </receiver>
+    </application>
+
+
+</manifest>

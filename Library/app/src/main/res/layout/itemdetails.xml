@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/list_selector"
+    android:orientation="horizontal"
+    android:padding="5dip" >
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        card_view:cardCornerRadius="2dp"
+        card_view:contentPadding="10dp">
+
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+    <!--  ListRow Left sied Thumbnail image -->
+    <LinearLayout android:id="@+id/thumbnail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="3dip"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/image_bg"
+        android:layout_marginRight="5dip">
+
+        <ImageView
+            android:id="@+id/list_image"
+            android:layout_width="100dip"
+            android:layout_height="100dip"
+            android:src="@android:drawable/alert_light_frame"/>
+
+    </LinearLayout>
+
+    <!-- Title Of Book-->
+    <TextView
+        android:id="@+id/booktitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dip"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:text="Red Riding Hood"
+        android:textColor="#040404"
+        android:typeface="sans"
+        android:textSize="20dip"
+        android:textStyle="bold"/>
+
+    <!-- Author Name -->
+    <TextView
+        android:id="@+id/author"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/booktitle"
+        android:textColor="#343434"
+        android:textSize="15dip"
+        android:layout_marginTop="2dip"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:text="Gwen Edith" />
+
+            <TextView
+                android:id="@+id/genre"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/author"
+                android:textColor="#343434"
+                android:textSize="15dip"
+                android:layout_marginTop="3dip"
+                android:layout_toRightOf="@+id/thumbnail"
+                android:text="Genre" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/thumbnail"
+
+        android:paddingTop="30dip"
+        android:text="this is the paragraph!!"
+        android:textAppearance="@style/AppTheme.PopupOverlay"
+        android:textColor="@color/place_autocomplete_prediction_primary_text"
+        android:textSize="18dip"/>
+
+
+            <ImageView
+                android:clickable="true"
+                android:id="@+id/buyicon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/book"
+                android:layout_alignTop="@+id/genre"
+                android:layout_alignRight="@+id/booktitle"
+                android:layout_alignEnd="@+id/booktitle" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>
